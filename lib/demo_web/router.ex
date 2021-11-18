@@ -17,7 +17,8 @@ defmodule DemoWeb.Router do
   scope "/", DemoWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", SurfaceDiff, :show, as: :surface_diff
+    live "/heex", HeexDiff, :show, as: :heex_diff
   end
 
   # Other scopes may use custom stacks.
